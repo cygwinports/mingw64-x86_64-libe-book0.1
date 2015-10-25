@@ -1,0 +1,22 @@
+CROSS_HOST="x86_64-w64-mingw32"
+inherit cross
+
+NAME="mingw64-x86_64-libe-book0.1"
+VERSION=0.1.2
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="E-book import filter library for Win64 toolchain"
+DESCRIPTION="libe-book is a library and a set of tools for reading and
+converting various non-HTML reflowable e-book formats."
+HOMEPAGE="https://sourceforge.net/projects/libebook/"
+SRC_URI="mirror://sourceforge/libebook/libe-book-${VERSION}.tar.xz"
+SRC_DIR="libe-book-${VERSION}"
+
+CYGCONF_ARGS="--without-docs"
+
+src_install() {
+	cd ${B}
+	cyginstall bin_PROGRAMS=
+}
+
+KEEP_LA_FILES="none"
